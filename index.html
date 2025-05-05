@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Solution - Impresión 3D Personalizada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: #f5f7fa;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav.responsive {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 1rem;
+    }
+    nav.responsive a {
+      margin: 0.5rem 0;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #004080;
+        padding: 1rem;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #004080, #0066cc);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #004080;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .chat, .form, .blog {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 4rem;
+    }
+    .cta {
+      background: #0066cc;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    form input, form textarea {
+      padding: 0.5rem;
+      width: 80%;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://www.instagram.com/industrialsolutionsuah?igsh=ZmdvanI5amwxZXpi" target="_blank">
+      <img src="logo empresa.png" alt="Logotipo de Industrial Solution" class="logo" />
+    </a>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <a href="#materiales">Materiales</a>
+      <a href="#calculadora">Precios</a>
+      <a href="#subida">Sube tu diseño</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Impresión 3D Personalizada para Particulares y Profesionales</h1>
+    <p>Sube tu diseño, calcula el precio y recíbelo donde quieras. Rápido, ecológico y a medida.</p>
+    <a href="#subida" class="cta">Empieza ahora</a>
+  </section>
+
+  <section class="section" id="materiales">
+    <h2>Catálogo de materiales</h2>
+    <div class="grid">
+      <div class="card"><h3>PETG</h3><p>Resistente, versátil, ideal para uso general. Disponible en varios colores.</p></div>
+      <div class="card"><h3>TPU</h3><p>Flexible y duradero. Perfecto para piezas que absorben impacto.</p></div>
+      <div class="card"><h3>Resina SLA</h3><p>Alta precisión y detalles. Ideal para joyería, miniaturas y prototipos exigentes.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="calculadora">
+    <h2>Calculadora de precios</h2>
+    <p>Elige el tamaño, material y nivel de detalle para obtener un presupuesto orientativo en segundos.</p>
+    <div class="form">
+      <a href="#" class="cta">Calcular precio</a>
+    </div>
+  </section>
+
+  <section class="section" id="subida">
+    <h2>Sube tu diseño</h2>
+    <p>¿Ya tienes tu archivo STL o similar? Súbelo aquí y nosotros nos encargamos del resto.</p>
+    <div class="form">
+      <form action="mailto:info@industrialsolution.es" method="post" enctype="text/plain">
+         <input type="file" name="archivo" required><br>
+         <input type="text" name="nombre" placeholder="Tu nombre" required><br>
+         <input type="email" name="email" placeholder="Tu correo" required><br>
+         <textarea name="mensaje" placeholder="Describe tu idea..." required></textarea><br>
+         <button type="submit" class="cta">Enviar diseño</button>
+       </form>
+    </div>
+  </section>
+
+  <section class="section chat">
+    <h2>Asistencia en tiempo real</h2>
+    <p>Habla con nuestro equipo técnico si tienes dudas sobre materiales, diseño o precios.</p>
+    <a href="https://wa.me/34600000000" class="cta" target="_blank">Chatear por WhatsApp</a>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Blog 3D: Aprende y descubre</h2>
+    <div class="grid">
+      <div class="card"><h3>¿Cómo elegir el material correcto?</h3><p>Guía para tomar la mejor decisión según el uso del producto.</p></div>
+      <div class="card"><h3>Errores comunes en impresión 3D</h3><p>Consejos para evitar fallos de diseño y mejorar tus modelos.</p></div>
+      <div class="card"><h3>Aplicaciones reales de nuestros clientes</h3><p>Casos reales de éxito con fotos y testimonios.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Industrial Solution · Impresión 3D personalizada · info@industrialsolution.es</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
